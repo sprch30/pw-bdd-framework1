@@ -8,7 +8,8 @@
     "test:qa": "cross-env ENV=qa cucumber-js",
     "test:uat": "cross-env ENV=uat cucumber-js",
     "test:smoke": "cucumber-js --tags @smoke",
-    "test:regression": "cross-env ENV=uat cucumber-js --tags @regression"
+    "test:regression": "cross-env ENV=uat cucumber-js --tags @regression",
+    "config:check": "ts-node -r tsconfig-paths/register practice/day3.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "cross-env": "^10.1.0",
     "dotenv": "^18.0.10",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
   }
 }
