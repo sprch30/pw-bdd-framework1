@@ -14,10 +14,17 @@ function required(name: string): string{
     return value;
 }
 
+function requiredNumber(name: string): number{
+    const value = Number(required(name));
+    if(Number.isNaN(value)) throw new Error(`${name} must be a number`);
+    return value;
+}
+
 export const config = {
     env,
     ...environments[env],
     username: required('APP_USERNAME'),
     password: required('APP_PASSWORD'),
     headless: process.env.HEADLESS !== 'false',
+    timeout: requiredNumber('TIMEOUT')
 };
